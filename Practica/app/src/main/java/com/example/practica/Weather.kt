@@ -1,4 +1,4 @@
-package com.example.practica
+/*package com.example.practica
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -31,4 +31,4 @@ class cordSource {
     @Expose var lon: String? = null
     @SerializedName("content")
     @Expose var name: String? = null
-}
+}*/
