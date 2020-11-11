@@ -25,8 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-var Citys = arrayOf("Moscow", "London", "Paris", "Volgograd", "Samara", "Voronezh")
-
+    var Citys = arrayOf("Moscow", "London", "Paris", "Volgograd", "Samara", "Voronezh")
 
 class Fragment_main : Fragment() {
     // TODO: Rename and change types of parameters
