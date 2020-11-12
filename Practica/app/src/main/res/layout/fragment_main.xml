@@ -82,7 +82,7 @@
         android:id="@+id/clouds"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:background="@drawable/Sun"
+        android:background="@drawable/scatteredcloud"
         app:layout_constraintBottom_toTopOf="@+id/temp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cities" />
