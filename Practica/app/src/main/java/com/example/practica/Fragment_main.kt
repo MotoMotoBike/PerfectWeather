@@ -62,6 +62,7 @@ class Fragment_main : Fragment() {
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 fragcity.text = (view as TextView).text
+                sendNetworkRequest()
             }
         }
         sendNetworkRequest()
@@ -85,7 +86,7 @@ class Fragment_main : Fragment() {
             .addConverterFactory(GsonConverterFactory.create())
         val retrofit = builder.build()
         val apiInterface: Interface = retrofit.create<Interface>(Interface::class.java)
-        val call: retrofit2.Call<Weather> = apiInterface.getFile(/*"London"*/)
+        val call: retrofit2.Call<Weather> = apiInterface.getFile(fragcity.text.toString(),"feb0cd768c865126b95d4f3c4c1fb041")
         call.enqueue(object : Callback<Weather> {
             override fun onFailure(call: retrofit2.Call<Weather>, t: Throwable) {
                 Log.i("LOL", t.message.toString())
@@ -99,7 +100,8 @@ class Fragment_main : Fragment() {
                     try {
                         i++
                         activity?.runOnUiThread {
-                            temp.text = statusResponse?.main?.temp.toString()
+                            temp.text =  statusResponse?.main?.temp?.toString()
+                            temp.text = (temp.text.toString().toDouble() - 273.15).toString()
                             Log.i("LOL",statusResponse?.main?.temp.toString())
                             bol = false
                         }

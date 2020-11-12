@@ -10,6 +10,8 @@ import retrofit2.http.Query
 //var city = "London"
 
 interface Interface {
-    @GET("weather?q=Moscow&appid=feb0cd768c865126b95d4f3c4c1fb041")
-    fun  getFile(/*@Path("city") city : String*/): Call<Weather>
+    @GET("weather")
+    fun  getFile(@Query("q") city : String,
+                 @Query("appid") id:String
+    ): Call<Weather>
 }
